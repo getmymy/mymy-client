@@ -1,6 +1,6 @@
 packages:
   # include packages in subfolders (e.g. apps/ and packages/)
-  - "src/**"
+  - 'src/**'
 
   # exclude some directories
-  - "!**/test/**"
+  - '!**/test/**'
