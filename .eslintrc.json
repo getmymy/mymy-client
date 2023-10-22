@@ -1,6 +1,6 @@
 {
   "extends": "next/core-web-vitals",
-  "plugins": ["perfectionist", "unused-imports"],
+  "plugins": ["perfectionist", "unused-imports", "prettier"],
   "rules": {
     "perfectionist/sort-enums": ["off"],
     "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
