@@ -1,7 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  compilerOptions: {
+    esModuleInterop: true,
+    jsx: 'preserve',
+    baseUrl: '.',
+    paths: {
+      '@/components/*': ['src/components/*'],
+      '@/lib/*': ['src/lib/*'],
+    },
+  },
   darkMode: ['class'],
-  content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}', './src/**/*.{ts,tsx}'],
+  content: ['./src/**/*.{ts,tsx}'],
   theme: {
     container: {
       center: true,
