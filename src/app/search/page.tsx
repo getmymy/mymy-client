@@ -1,9 +1,11 @@
 import { Input } from '@/components/ui';
 
+import BottomSheet from './components/BottomSheet';
 import List from './components/List';
+import { Music } from './components/ListItem';
 
 // @todo: api로 받아오기
-const musicList_MOCK = [
+const musicList_MOCK: Music[] = [
   {
     id: '1',
     musicTitle: 'musicTitle',
@@ -26,14 +28,17 @@ const musicList_MOCK = [
 
 export default function Search() {
   return (
-    <div className="px-4 border-border">
-      <Input placeholder="노래, 아티스트, 앨범명 등을 검색하세요." />
+    <>
+      <div className="px-4 border-border">
+        <Input placeholder="노래, 아티스트, 앨범명 등을 검색하세요." />
 
-      <div className="w-full py-[15px]">
-        <p className="text-[12px]/[140%] text-white-a40">최근 찾은 노래</p>
+        <div className="w-full py-[15px]">
+          <p className="text-[12px]/[140%] text-white-a40">최근 찾은 노래</p>
+        </div>
+
+        <List musicList={musicList_MOCK} />
       </div>
-
-      <List musicList={musicList_MOCK} />
-    </div>
+      <BottomSheet selectMusic={musicList_MOCK[0]} />
+    </>
   );
 }
