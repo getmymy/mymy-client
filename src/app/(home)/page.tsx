@@ -9,6 +9,7 @@ export default function Home() {
       <Link href="/sign-in">가입</Link>
       <Button>버튼</Button>
       <Input placeholder="값을 입력해주세요" />
+      <input type="text" placeholder="값을 입력해주세요" />
     </main>
   );
 }
