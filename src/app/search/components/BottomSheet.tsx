@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui';
 
+import Cd from './Cd';
 import { Music } from './ListItem';
 
 export default function BottomSheet({ selectMusic }: { selectMusic: Music }) {
@@ -7,9 +8,7 @@ export default function BottomSheet({ selectMusic }: { selectMusic: Music }) {
     <div className="flex-shrink-0 pt-5 px-5 w-full rounded-t-[30px] bg-white-a10 absolute bottom-0">
       <button className=" text-white  font-medium leading-[140%]">취소</button>
 
-      <div className="flex justify-center mb-4">
-        <img className="flex-shrink-0 w-52 h-52 border rounded-full border-white-a20" src={selectMusic.thumbnailUrl} />
-      </div>
+      <Cd src={selectMusic.thumbnailUrl} />
 
       <div className="flex flex-col items-center gap-4 w-full">
         <div className="flex flex-col items-start gap-1 self-stretch">
