@@ -1,15 +1,16 @@
-import Link from 'next/link';
+'use client';
 
-import { Button, Input } from '@/components/common';
+import { Button } from '@/components/common';
 
 export default function Home() {
+  const handleLoginWithGoogle = () => {
+    location.href = `${process.env.NEXT_PUBLIC_API_URL}/public/v1/login?service_type=GOOGLE`;
+  };
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4">
-      Mymy
-      <Link href="/sign-in">가입</Link>
-      <Button>버튼</Button>
-      <Input placeholder="값을 입력해주세요" />
-      <input type="text" placeholder="값을 입력해주세요" />
+      <div>로고</div>
+      서비스 소개
+      <Button onClick={handleLoginWithGoogle}>Google로 시작하기</Button>
     </main>
   );
 }
