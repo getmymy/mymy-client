@@ -20,6 +20,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        primary: ['var(--font-pretendard)'],
+        secondary: ['var(--font-ydestreet)'],
+      },
       colors: {
         'black-100': 'var(--black-100)',
         'black-a10': 'var(--black-a10)',
