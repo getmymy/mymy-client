@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@/components/ui';
+import { Button, Badge } from '@/components/ui';
 
 export default function Home() {
   const handleLoginWithGoogle = () => {
@@ -10,6 +10,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-4">
       <div>로고</div>
       서비스 소개
+      <Badge label="플레이리스트" number={6} />
       <Button onClick={handleLoginWithGoogle}>Google로 시작하기</Button>
     </main>
   );
