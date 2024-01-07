@@ -24,12 +24,15 @@ const YoutubePlayer = forwardRef<YouTubeEvent, { youtubeId: string }>(({ youtube
   };
 
   return (
-    <YouTube
-      videoId={youtubeId}
-      opts={opts}
-      className="absolute bottom-0 left-0 z-[-10] w-[200px] h-[200px] overflow-hidden"
-      onReady={onPlayerReady}
-    />
+    <>
+      <div className="absolute bottom-0 left-0 -z-10 w-[200px] h-[200px] overflow-hidden bg-background"></div>
+      <YouTube
+        videoId={youtubeId}
+        opts={opts}
+        className="absolute bottom-0 left-0 -z-20 w-[200px] h-[200px] overflow-hidden"
+        onReady={onPlayerReady}
+      />
+    </>
   );
 });
 
