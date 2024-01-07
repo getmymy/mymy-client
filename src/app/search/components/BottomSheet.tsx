@@ -9,7 +9,7 @@ import Cd from './Cd';
 import { Music } from './ListItem';
 import YoutubePlayer from './YoutubePlayer';
 
-export default function BottomSheet({ selectMusic }: { selectMusic: Music }) {
+export default function BottomSheet({ selectMusic, onClose }: { selectMusic: Music; onClose: () => void }) {
   const eventRef = useRef<YouTubeEvent>(null);
 
   const onClick = () => {
@@ -18,6 +18,9 @@ export default function BottomSheet({ selectMusic }: { selectMusic: Music }) {
 
   return (
     <>
+      {/* 백그라운드 컴포넌트  */}
+      <div className="h-full w-full absolute top-0 z-0" onClick={onClose}></div>
+
       <div className="flex-shrink-0 pt-5 px-5 w-full rounded-t-[30px] bg-white-a10 absolute bottom-0 z-10 backdrop-blur-md">
         <button onClick={onClick} className=" text-white  font-medium leading-[140%]">
           취소
