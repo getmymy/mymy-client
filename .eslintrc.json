@@ -1,11 +1,11 @@
 {
-  "extends": "next/core-web-vitals",
-  "plugins": ["perfectionist", "unused-imports", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "plugin:@typescript-eslint/recommended"],
+  "plugins": ["perfectionist", "unused-imports", "prettier", "@typescript-eslint"],
   "rules": {
     "perfectionist/sort-enums": ["off"],
-    "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
-    "unused-imports/no-unused-imports": "error",
-    "unused-imports/no-unused-vars": ["error"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
     "perfectionist/sort-imports": [
       "error",
       {
