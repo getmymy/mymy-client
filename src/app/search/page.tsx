@@ -83,7 +83,7 @@ export default function Search() {
 
         <List musicList={musicList_MOCK} onListItemClick={onListItemClick} />
       </div>
-      {selectMusic && <BottomSheet selectMusic={selectMusic} onClose={onBottomSheetClose} />}
+      <BottomSheet selectMusic={selectMusic} onClose={onBottomSheetClose} />
     </>
   );
 }
