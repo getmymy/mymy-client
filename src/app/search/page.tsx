@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 
 import { Input } from '@/components/ui';
 
@@ -54,6 +54,11 @@ const musicList_MOCK: Music[] = [
 
 export default function Search() {
   const [selectMusic, setSelectMusic] = useState<Music | null>(null);
+  const [query, setQuery] = useState<string>('');
+
+  useEffect(() => {
+    console.log('query', query);
+  }, []);
 
   const onListItemClick = (music: Music) => {
     setSelectMusic(music);
@@ -63,10 +68,14 @@ export default function Search() {
     setSelectMusic(null);
   };
 
+  const onQueryChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+  };
+
   return (
     <>
       <div className="px-4 border-border">
-        <Input placeholder="노래, 아티스트, 앨범명 등을 검색하세요." />
+        <Input placeholder="노래, 아티스트, 앨범명 등을 검색하세요." value={query} onChange={onQueryChange} />
 
         <div className="w-full py-[15px]">
           <p className="text-[12px]/[140%] text-white-a40">최근 찾은 노래</p>

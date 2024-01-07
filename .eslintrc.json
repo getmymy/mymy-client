@@ -1,6 +1,6 @@
 {
   "parser": "@typescript-eslint/parser",
-  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "plugin:@typescript-eslint/recommended"],
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
   "plugins": ["perfectionist", "unused-imports", "prettier", "@typescript-eslint"],
   "rules": {
     "perfectionist/sort-enums": ["off"],
