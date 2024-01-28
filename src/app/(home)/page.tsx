@@ -1,16 +1,17 @@
-'use client';
+import { Suspense } from 'react';
 
-import { Button } from '@/components/common';
+import { Auth } from './Auth';
+import { Home } from './Home';
 
-export default function Home() {
-  const handleLoginWithGoogle = () => {
-    location.href = `${process.env.NEXT_PUBLIC_API_URL}/public/v1/login?service_type=GOOGLE`;
-  };
+type Props = {
+  searchParams: { [key: string]: string | undefined };
+};
+
+export default function Page({ searchParams }: Props) {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-4">
-      <div>로고</div>
-      서비스 소개
-      <Button onClick={handleLoginWithGoogle}>Google로 시작하기</Button>
-    </main>
+    <Suspense fallback={<div>Loading...</div>}>
+      {searchParams?.accessToken && <Auth accessToken={searchParams.code as string} />}
+      <Home />
+    </Suspense>
   );
 }
