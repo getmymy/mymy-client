@@ -1,11 +1,13 @@
 'use client';
 
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { YouTubeEvent } from 'react-youtube';
 
 import { AnimatePresence, motion } from 'framer-motion';
 
+import VolumeOff from '@/components/icon/VolumeOff';
+import VolumeOn from '@/components/icon/VolumeOn';
 import { Button } from '@/components/ui';
 
 import Cd from './Cd';
@@ -14,9 +16,30 @@ import YoutubePlayer from './YoutubePlayer';
 
 export default function BottomSheet({ selectMusic, onClose }: { selectMusic: Music | null; onClose: () => void }) {
   const eventRef = useRef<YouTubeEvent>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  const onClick = () => {
+  useEffect(() => {
+    if (!selectMusic) {
+      setIsPlaying(false);
+    }
+  }, [selectMusic]);
+
+  const playMusic = () => {
     eventRef.current?.target.playVideo();
+  };
+
+  const pauseMusic = () => {
+    eventRef.current?.target.pauseVideo();
+  };
+
+  const onMusicClick = () => {
+    if (isPlaying) {
+      pauseMusic();
+      setIsPlaying(false);
+    } else {
+      playMusic();
+      setIsPlaying(true);
+    }
   };
 
   return createPortal(
@@ -33,9 +56,17 @@ export default function BottomSheet({ selectMusic, onClose }: { selectMusic: Mus
             exit={{ opacity: 0, y: 50 }}
             className="flex-shrink-0 pt-5 px-5 w-full rounded-t-[30px] bg-white-a10 absolute bottom-0 backdrop-blur-md"
           >
-            <button onClick={onClick} className=" text-white  font-medium leading-[140%]">
-              취소
-            </button>
+            <div className="flex justify-between">
+              <button onClick={onClose} className=" text-white  font-medium leading-[140%]">
+                취소
+              </button>
+              <button
+                onClick={onMusicClick}
+                className="flex items-center justify-center w-[32px] h-[32px] bg-white-a20 rounded-full"
+              >
+                {isPlaying ? <VolumeOff /> : <VolumeOn />}
+              </button>
+            </div>
 
             <Cd src={selectMusic.thumbnailUrl} />
 
@@ -52,6 +83,7 @@ export default function BottomSheet({ selectMusic, onClose }: { selectMusic: Mus
               </div>
             </div>
 
+            {/* @todo: button 컴포넌트 업데이트 반영 */}
             <Button className="my-[1.25rem]">Share</Button>
           </motion.div>
           <YoutubePlayer ref={eventRef} youtubeId={selectMusic.musicId} />
