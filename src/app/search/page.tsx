@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 import { Input } from '@/components/ui';
 
@@ -55,10 +55,6 @@ const musicList_MOCK: Music[] = [
 export default function Search() {
   const [selectMusic, setSelectMusic] = useState<Music | null>(null);
   const [query, setQuery] = useState<string>('');
-
-  useEffect(() => {
-    console.log('query', query);
-  }, []);
 
   const onListItemClick = (music: Music) => {
     setSelectMusic(music);
