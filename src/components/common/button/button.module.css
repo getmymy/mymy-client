@@ -1,0 +1,13 @@
+@tailwind components;
+
+@layer components {
+  .default {
+    @apply bg-primary text-primary-foreground;
+  }
+  .default:hover {
+    @apply bg-white-a80;
+  }
+  .default:disabled {
+    @apply bg-black-100 text-white-a20 border-solid border-[1px] border-white-a20;
+  }
+}

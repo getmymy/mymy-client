@@ -4,12 +4,14 @@ import { cn } from '@/lib/utils';
 import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 
+import styles from './button.module.css';
+
 const buttonVariants = cva(
-  'inline-flex items-center justify-center rounded-2xl text-base font-medium transition-colors disabled:cursor-not-allowed disabled:hover:bg-primary disabled:hover:text-primary-foreground disabled:border-white-a20',
+  'inline-flex items-center justify-center rounded-2xl text-base font-medium transition-colors',
   {
     variants: {
       variant: {
-        default: 'bg-primary text-primary-foreground hover:bg-white-a90',
+        default: styles.default,
       },
       size: {
         default: 'h-14 px-4 py-2 w-full',
