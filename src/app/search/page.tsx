@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 import { Input } from '@/components/ui';
 
@@ -56,10 +56,6 @@ export default function Search() {
   const [selectMusic, setSelectMusic] = useState<Music | null>(null);
   const [query, setQuery] = useState<string>('');
 
-  useEffect(() => {
-    console.log('query', query);
-  }, []);
-
   const onListItemClick = (music: Music) => {
     setSelectMusic(music);
   };
@@ -83,7 +79,7 @@ export default function Search() {
 
         <List musicList={musicList_MOCK} onListItemClick={onListItemClick} />
       </div>
-      {selectMusic && <BottomSheet selectMusic={selectMusic} onClose={onBottomSheetClose} />}
+      <BottomSheet selectMusic={selectMusic} onClose={onBottomSheetClose} />
     </>
   );
 }
