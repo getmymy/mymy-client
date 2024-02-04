@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
-import { AuthProvider } from './(home)/AuthProvider';
 import { Pretendard, Ydestreet } from './fonts';
+import { Providers } from './providers';
 
 import './globals.css';
 
@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko">
       <body className={`${Ydestreet.variable} ${Pretendard.variable}`}>
-        <AuthProvider>{children}</AuthProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
