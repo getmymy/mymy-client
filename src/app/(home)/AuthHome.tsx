@@ -2,7 +2,7 @@
 
 import { Button, Badge } from '@/components/ui';
 
-export const Home = () => {
+export const NoAuthHome = () => {
   const handleLoginWithGoogle = () => {
     location.href = `${process.env.NEXT_PUBLIC_API_URL}/public/v1/login?service_type=GOOGLE`;
   };
