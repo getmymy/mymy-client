@@ -17,6 +17,7 @@ type AuthResponse = {
 
 export async function getToken(param: { auth_code?: string | null }) {
   try {
+    console.log('code accepted', param.auth_code);
     const req_body: AuthRequest = { grant_type: GrantType.REFRESH_TOKEN };
 
     if (Object.hasOwn(param, 'auth_code')) {
@@ -30,6 +31,7 @@ export async function getToken(param: { auth_code?: string | null }) {
     const res = await axios.post('/public/v1/token', req_body);
     return res.data as AuthResponse;
   } catch (error) {
+    console.error(error);
     throw new Error('Error getting auth');
   }
 }

@@ -7,9 +7,20 @@ const instance = axios.create({
   },
 });
 
+// axios setting 어떻게 할 건지
+
 export const get = async (url: string) => {
   try {
     const res = await instance.get(url);
+    return res.data;
+  } catch (error) {
+    console.log('error', error);
+  }
+};
+
+export const post = async (url: string, data: unknown) => {
+  try {
+    const res = await instance.post(url, data);
     return res.data;
   } catch (error) {
     console.log('error', error);
