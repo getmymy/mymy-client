@@ -6,10 +6,10 @@ import { YouTubeEvent } from 'react-youtube';
 
 import { AnimatePresence, motion } from 'framer-motion';
 
+import { Button } from '@/components/common';
+import Cd from '@/components/common/Cd';
 import VolumeOff from '@/components/icon/VolumeOff';
 import VolumeOn from '@/components/icon/VolumeOn';
-import { Button } from '@/components/ui';
-import Cd from '@/components/ui/Cd';
 
 import { Music } from './ListItem';
 import YoutubePlayer from './YoutubePlayer';

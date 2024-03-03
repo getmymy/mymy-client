@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Button, Input } from '@/components/ui';
+import { Button, Input } from '@/components/common';
 
 export default function Home() {
   return (

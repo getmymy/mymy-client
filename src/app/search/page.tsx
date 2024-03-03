@@ -2,7 +2,7 @@
 
 import { ChangeEvent, useState } from 'react';
 
-import { Input } from '@/components/ui';
+import { Input } from '@/components/common';
 
 import BottomSheet from './components/BottomSheet';
 import List from './components/List';
