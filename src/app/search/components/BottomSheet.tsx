@@ -6,11 +6,11 @@ import { YouTubeEvent } from 'react-youtube';
 
 import { AnimatePresence, motion } from 'framer-motion';
 
+import { Button } from '@/components/common';
+import Cd from '@/components/common/Cd';
 import VolumeOff from '@/components/icon/VolumeOff';
 import VolumeOn from '@/components/icon/VolumeOn';
-import { Button } from '@/components/ui';
 
-import Cd from './Cd';
 import { Music } from './ListItem';
 import YoutubePlayer from './YoutubePlayer';
 
@@ -41,6 +41,10 @@ export default function BottomSheet({ selectMusic, onClose }: { selectMusic: Mus
       setIsPlaying(true);
     }
   };
+
+  if (typeof document === 'undefined') {
+    return null;
+  }
 
   return createPortal(
     <AnimatePresence>
