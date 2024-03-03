@@ -42,6 +42,10 @@ export default function BottomSheet({ selectMusic, onClose }: { selectMusic: Mus
     }
   };
 
+  if (typeof document === 'undefined') {
+    return null;
+  }
+
   return createPortal(
     <AnimatePresence>
       {selectMusic && (
