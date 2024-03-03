@@ -9,8 +9,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import VolumeOff from '@/components/icon/VolumeOff';
 import VolumeOn from '@/components/icon/VolumeOn';
 import { Button } from '@/components/ui';
+import Cd from '@/components/ui/Cd';
 
-import Cd from './Cd';
 import { Music } from './ListItem';
 import YoutubePlayer from './YoutubePlayer';
 
