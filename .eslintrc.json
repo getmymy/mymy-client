@@ -1,11 +1,24 @@
 {
   "parser": "@typescript-eslint/parser",
-  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
-  "plugins": ["perfectionist", "unused-imports", "prettier", "@typescript-eslint"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:storybook/recommended"
+  ],
+  "plugins": [
+    "perfectionist",
+    "unused-imports",
+    "prettier",
+    "@typescript-eslint"
+  ],
   "rules": {
-    "perfectionist/sort-enums": ["off"],
+    "perfectionist/sort-enums": [
+      "off"
+    ],
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["error"],
+    "@typescript-eslint/no-unused-vars": [
+      "error"
+    ],
     "perfectionist/sort-imports": [
       "error",
       {
@@ -15,11 +28,22 @@
           "type",
           "react",
           "next",
-          ["builtin", "external"],
+          [
+            "builtin",
+            "external"
+          ],
           "internal-type",
           "internal",
-          ["parent-type", "sibling-type", "index-type"],
-          ["parent", "sibling", "index"],
+          [
+            "parent-type",
+            "sibling-type",
+            "index-type"
+          ],
+          [
+            "parent",
+            "sibling",
+            "index"
+          ],
           "side-effect",
           "style",
           "object",
@@ -27,15 +51,25 @@
         ],
         "custom-groups": {
           "value": {
-            "react": ["react", "react-*"],
-            "next": ["next", "next-*"]
+            "react": [
+              "react",
+              "react-*"
+            ],
+            "next": [
+              "next",
+              "next-*"
+            ]
           },
           "type": {
             "react": "react"
           }
         },
         "newlines-between": "always",
-        "internal-pattern": ["@/components/**", "@/app/**", "@/hooks/**"]
+        "internal-pattern": [
+          "@/components/**",
+          "@/app/**",
+          "@/hooks/**"
+        ]
       }
     ]
   }
