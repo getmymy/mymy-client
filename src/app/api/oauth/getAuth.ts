@@ -28,10 +28,12 @@ export async function getToken(param: { auth_code?: string | null }) {
       req_body.service_type = 'GOOGLE';
       req_body.auth_code = auth_code;
     }
-    const res = await axios.post('/public/v1/token', req_body);
+    console.log('req_body', req_body);
+    const res = await axios.post(process.env.PUBLIC_API_URL + '/public/v1/token', req_body);
+    console.log('pass', res.data);
     return res.data as AuthResponse;
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     throw new Error('Error getting auth');
   }
 }

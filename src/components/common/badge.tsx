@@ -23,7 +23,7 @@ function Badge({ className, variant, label, number, ...props }: BadgeProps) {
   return (
     <div className={cn(badgeVariants({ variant }), className)} {...props}>
       <span className="text-white-a80">{label}</span>
-      {number && <span className="text-white-a100">{number}</span>}
+      {number && <span className="text-white-a100">{number.toLocaleString()}</span>}
     </div>
   );
 }
