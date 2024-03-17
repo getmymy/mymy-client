@@ -36,6 +36,40 @@
 
 @layer base {
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-primary;
+  }
+}
+
+/* typography */
+@layer components {
+  .typo-title-20sb {
+    @apply text-[1.25rem] font-semibold;
+  }
+  .typo-title-24b {
+    @apply text-[1.5rem] font-bold;
+  }
+  .typo-title-18sb {
+    @apply text-[1.125rem] font-semibold;
+  }
+  .typo-body-13m {
+    @apply text-[0.8125rem] font-medium;
+  }
+  .typo-body-13b {
+    @apply text-[0.8125rem] font-bold;
+  }
+  .typo-body-16r {
+    @apply text-[1rem] font-normal;
+  }
+  .typo-body-16m {
+    @apply text-[1rem] font-medium;
+  }
+  .typo-body-16b {
+    @apply text-[1rem] font-bold;
+  }
+  .typo-caption-12r {
+    @apply text-[0.75rem] font-normal;
+  }
+  .typo-caption-12b {
+    @apply text-[0.75rem] font-bold;
   }
 }
