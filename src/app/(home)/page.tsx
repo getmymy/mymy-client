@@ -2,9 +2,9 @@
 
 import { Suspense } from 'react';
 
-import { Auth } from './Auth';
+import { Auth } from '../auth/Auth';
+import { useAuthContext } from '../auth/AuthProvider';
 import { AuthHome } from './AuthHome';
-import { useAuthContext } from './AuthProvider';
 import { NoAuthHome } from './NoAuthHome';
 
 type Props = {

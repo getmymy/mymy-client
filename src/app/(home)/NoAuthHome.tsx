@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Badge } from '@/components/ui';
+import { Button, Badge } from '@/components/common';
 
 export const NoAuthHome = () => {
   const handleLoginWithGoogle = () => {

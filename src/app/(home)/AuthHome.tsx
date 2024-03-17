@@ -2,9 +2,8 @@
 
 import Image from 'next/image';
 
-import { Badge } from '@/components/ui';
-
-import Cd from '../search/components/Cd';
+import { Badge } from '@/components/common';
+import Cd from '@/components/common/Cd';
 
 const music = {
   id: 'string',

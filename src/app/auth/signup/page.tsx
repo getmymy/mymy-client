@@ -2,7 +2,7 @@
 
 import { useInputState } from '@toss/react';
 
-import { Button, Input } from '@/components/ui';
+import { Button, Input } from '@/components/common';
 
 export default function SignUp() {
   // debounde 적용
